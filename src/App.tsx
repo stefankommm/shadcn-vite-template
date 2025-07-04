@@ -1,16 +1,21 @@
-import './App.css'
-import { Button } from './components/ui/button'
+import { Route, Routes } from 'react-router'
+import IndexPage from './pages/IndexPage'
+import NotFound from './pages/NotFound'
 
 function App() {
   
 
   return (
-    <>
-    <h1 className='text-3xl'>Vitaj v tomto krasom template pre Shadcn, vite</h1>
-    <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>Click me</Button>
-    </div>
-    </>
+    <Routes>
+      <Route index element={<IndexPage/>}/>
+      <Route path="/index" element={<IndexPage/>}/>
+      <Route path="*" element={<NotFound/>}/>
+
+      <Route path="dashboard" > 
+
+      </Route>
+
+    </Routes>
   )
 }
 
